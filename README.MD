@@ -1,6 +1,8 @@
--- Exercício Módulo 02 - SQL
+## Exercício Módulo 02 - SQL
 -- Aluno: Rafael Corrêa
+
 -- Curso: Fullstack Python
+
 -- github: rafaelscdev
 
 ### Banco de Dados - Estrutura e Definições ###
@@ -9,17 +11,24 @@
 
 ## Estrutura do Projeto ##
 
+
 1. Esquema do Banco de Dados
 
 O banco de dados possui o esquema store, contendo as seguintes tabelas:
+
 customer: Gerencia os dados dos clientes.
+
 product: Contém informações sobre os produtos disponíveis.
+
 suppliers: Armazena dados dos fornecedores.
+
 product_stock: Gerencia o estoque dos produtos.
+
 
 2. Estrutura das Tabelas
 
 ## Tabela customer -
+
 Descrição: Armazena informações dos clientes, como nome, e-mail, CPF e telefone.
 
 Campos principais:
@@ -30,9 +39,11 @@ cpf: CPF único (obrigatório).
 phone: Telefone de contato.
 
 ## Tabela product -
+
 Descrição: Contém informações detalhadas dos produtos disponíveis na loja.
 
 Campos principais:
+
 product_id: Identificador único do produto.
 name: Nome do produto.
 price: Preço do produto.
@@ -51,15 +62,19 @@ quantity: Quantidade disponível em estoque (não pode ser negativa).
 #### MODO DE EXECUÇÃO NO TERMINAL ####
 
 -- Criando um banco de dados
+
 CREATE DATABSE dbebac;
 
 --Conectar ao banco de dados 
+
 \c dbebac;
 
 -- Criar o schema
+
 CREATE SCHEMA store;
 
 -- criando a tabela customer
+
 CREATE TABLE "store".customer(
     customer_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -69,6 +84,7 @@ CREATE TABLE "store".customer(
 );
 
 -- Criando tabela product
+
 CREATE TABLE "store".product(
     product_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -78,6 +94,7 @@ CREATE TABLE "store".product(
 );
 
 -- Criando a tabela de product_stock
+
 CREATE TABLE "store".product_stock (
     stock_id SERIAL PRIMARY KEY,
     product_id INTEGER NOT NULL,
@@ -85,4 +102,5 @@ CREATE TABLE "store".product_stock (
 );
 
 -- Listagem de Tabelas: Para verificar as tabelas criadas no esquema store
+
 \dt store.*
